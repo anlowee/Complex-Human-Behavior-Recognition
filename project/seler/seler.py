@@ -41,7 +41,7 @@ def build_model():
 
 X_train, Y_train = create_dataset(dataset)
 model = build_model()
-model.fit(X_train, Y_train, epochs=1500, batch_size=batch_size)
+model.fit(X_train, Y_train, epochs=3000, verbose=1, validation_split=0.25, batch_size=batch_size)
 
 test = np.concatenate([Y_train[-2], Y_train[-1]], axis=0)
 test = np.reshape(test, (1, look_back, features))
